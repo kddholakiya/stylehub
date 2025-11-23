@@ -100,11 +100,7 @@ const NewProducts = () => {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-center"
         >
           {products.map((product, index) => (
-            <motion.div
-              key={product.id}
-              variants={itemVariants}
-              className="group flex flex-col items-center w-full max-w-xs"
-            >
+            <motion.div key={product.id} variants={itemVariants} className="group flex flex-col items-center w-full max-w-xs" >
               {/* Product Card - Square */}
               <div className="relative w-full aspect-square bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-500 flex items-center justify-center">
 

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -10,7 +11,15 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h4 className="text-lg font-semibold mb-4">StyleHub</h4>
+            <div className="flex items-center gap-2">
+          <Image
+            src="/Logo.png"
+            width={150}
+            height={150}
+            alt="Logo"
+            className="object-contain"
+          />
+      </div>
             <p className="text-sm text-neutral-700">Discover timeless oxidized jewelry handcrafted for every occasion.</p>
           </div>
 

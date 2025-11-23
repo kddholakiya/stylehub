@@ -7,7 +7,6 @@ import {
   Command,
   ContactRound,
   House,
-  Settings2,
   ShoppingCart,
   Menu,
   X,
@@ -26,7 +25,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between px-6 py-3 shadow-md bg-white relative z-50">
+    <div className="sticky top-0 shadow-lg backdrop-blur-sm bg-white/80 w-full flex items-center justify-between px-6 py-3 z-50">
       {/* 🔹 Left: Logo */}
       <div className="flex items-center gap-2">
         <Link href="/" className="flex items-center gap-1 text-lg font-bold">
@@ -47,7 +46,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuLink
                 asChild
-                className={`${navigationMenuTriggerStyle()} flex items-center gap-1`}
+                className={`${navigationMenuTriggerStyle()}  bg-transparent hover:bg-accent/5 flex items-center gap-1`}
               >
                 <Link href="/">
                   <div className="flex gap-1 leading-tight">
@@ -61,7 +60,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuLink
                 asChild
-                className={navigationMenuTriggerStyle()}
+                className={`${navigationMenuTriggerStyle()}  bg-transparent hover:bg-accent/5 flex items-center gap-1`}
               >
                 <Link href="/explore">
                   <div className="flex gap-1 leading-tight">
@@ -75,7 +74,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuLink
                 asChild
-                className={navigationMenuTriggerStyle()}
+                className={`${navigationMenuTriggerStyle()}  bg-transparent hover:bg-accent/5 flex items-center gap-1`}
               >
                 <Link href="/about">
                   <div className="flex gap-1 leading-tight">
@@ -89,7 +88,7 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuLink
                 asChild
-                className={navigationMenuTriggerStyle()}
+                className={`${navigationMenuTriggerStyle()}  bg-transparent hover:bg-accent/5 flex items-center gap-1`}
               >
                 <Link href="/contact">
                   <div className="flex gap-1 leading-tight">
