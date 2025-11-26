@@ -8,7 +8,6 @@ export default function CollectionsLayout({
 }) {
   return (
     <div>
-      <Navbar />
       {children}
       <Footer />
     </div>
