@@ -53,24 +53,48 @@ export default function ExplorePage() {
                 <p className="text-sm text-[#5A5143]">Bold oxidized pieces with masculine silhouettes and heirloom finish.</p>
               </div>
               <Link href="/collections/bracelets">
-                <Button className="bg-[#3E3124] hover:bg-[#2E241B] text-[#F5E9D0]">Shop Men's</Button>
+                <Button className="bg-[#3E3124] hover:bg-[#2E241B] text-[#F5E9D0]">Shop Men&apos;s</Button>
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <motion.div
+              className="grid grid-cols-2 gap-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.06 } },
+              }}
+            >
               {menProducts.map((p) => (
-                <div key={p.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
-                  <div className="relative w-full aspect-square bg-gray-100 flex items-center justify-center">
-                    <Image src={p.image} alt={p.name} width={300} height={300} className="w-4/5 h-4/5 object-contain" unoptimized />
-                    {p.onSale && <div className="absolute top-3 right-3 bg-[#C9A87A] text-white rounded-full w-10 h-10 flex items-center justify-center text-xs font-semibold">Sale</div>}
+                <motion.div
+                  key={p.id}
+                  className="bg-white rounded-lg overflow-hidden shadow-sm transform-gpu"
+                  variants={{
+                    hidden: { opacity: 0, y: 8 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+                  }}
+                  whileHover={{ scale: 1.03, y: -6 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                >
+                  <div className="relative w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <motion.div className="w-4/5 h-4/5" whileHover={{ scale: 1.08 }} transition={{ duration: 0.35 }}>
+                      <Image src={p.image} alt={p.name} width={300} height={300} className="w-full h-full object-contain" unoptimized />
+                    </motion.div>
+                    {p.onSale && (
+                      <div className="absolute top-3 right-3 bg-[#C9A87A] text-white rounded-full w-10 h-10 flex items-center justify-center text-xs font-semibold">
+                        Sale
+                      </div>
+                    )}
                   </div>
                   <div className="p-3">
                     <h4 className="text-sm font-medium text-[#2B2B2B] truncate">{p.name}</h4>
                     <div className="text-[#C9A87A] font-semibold mt-2">${p.price}</div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </section>
 
           {/* Women Section */}
@@ -81,24 +105,48 @@ export default function ExplorePage() {
                 <p className="text-sm text-[#5A5143]">Delicate and statement pieces curated for feminine elegance.</p>
               </div>
               <Link href="/collections/necklaces">
-                <Button className="bg-[#3E3124] hover:bg-[#2E241B] text-[#F5E9D0]">Shop Women's</Button>
+                <Button className="bg-[#3E3124] hover:bg-[#2E241B] text-[#F5E9D0]">Shop Women&#39;s</Button>
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <motion.div
+              className="grid grid-cols-2 gap-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.06 } },
+              }}
+            >
               {womenProducts.map((p) => (
-                <div key={p.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
-                  <div className="relative w-full aspect-square bg-gray-100 flex items-center justify-center">
-                    <Image src={p.image} alt={p.name} width={300} height={300} className="w-4/5 h-4/5 object-contain" unoptimized />
-                    {p.onSale && <div className="absolute top-3 right-3 bg-[#C9A87A] text-white rounded-full w-10 h-10 flex items-center justify-center text-xs font-semibold">Sale</div>}
+                <motion.div
+                  key={p.id}
+                  className="bg-white rounded-lg overflow-hidden shadow-sm transform-gpu"
+                  variants={{
+                    hidden: { opacity: 0, y: 8 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+                  }}
+                  whileHover={{ scale: 1.03, y: -6 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                >
+                  <div className="relative w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <motion.div className="w-4/5 h-4/5" whileHover={{ scale: 1.08 }} transition={{ duration: 0.35 }}>
+                      <Image src={p.image} alt={p.name} width={300} height={300} className="w-full h-full object-contain" unoptimized />
+                    </motion.div>
+                    {p.onSale && (
+                      <div className="absolute top-3 right-3 bg-[#C9A87A] text-white rounded-full w-10 h-10 flex items-center justify-center text-xs font-semibold">
+                        Sale
+                      </div>
+                    )}
                   </div>
                   <div className="p-3">
                     <h4 className="text-sm font-medium text-[#2B2B2B] truncate">{p.name}</h4>
                     <div className="text-[#C9A87A] font-semibold mt-2">${p.price}</div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </section>
         </div>
       </div>
